@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Danh Mục Sách</title>
-</head>
-<body>
-    <header>
-        <h1>
-            TOP
-        </h1>
-    </header>
-    <section class = "admin-content">
+<section class = "admin-content">
         <div class="admin-content-left">
                 <ul>
                         <li><a href ="#">Danh Mục </a>
@@ -38,19 +23,3 @@
                         </li>
                 </ul>
         </div>
-        <div class="admin-content-right">
-                <div class="admin-content-right-caterory_add">
-                    <h1>
-                        Thêm Danh Mục
-                    </h1>
-                    <form action="" method="POST">
-                        <input type="Text" placeholder="Nhập Tên Danh Mục">
-                        <button type="submit">Thêm</button>
-                    </form>
-                </div>
-        </div>
-
-    </section>
-    
-</body>
-</html>
