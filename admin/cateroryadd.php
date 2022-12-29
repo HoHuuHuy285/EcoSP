@@ -1,5 +1,7 @@
 <?php
 include "header.php"
+include "slider.php"
+?>
 
 
 
@@ -9,7 +11,7 @@ include "header.php"
                         Thêm Danh Mục
                     </h1>
                     <form action="" method="POST">
-                        <input type="Text" placeholder="Nhập Tên Danh Mục">
+                        <input name="cartgory_name" type="Text" placeholder="Nhập Tên Danh Mục">
                         <button type="submit">Thêm</button>
                     </form>
                 </div>
