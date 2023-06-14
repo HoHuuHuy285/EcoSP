@@ -1,0 +1,235 @@
+﻿@model EcooSP.Models.SACH
+
+@{
+    ViewBag.Title = "Thông Tin Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<div class="row" style="padding:15px">
+    <div class="col-md-12">
+        <h2> Thông Tin Sách</h2>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                Ảnh
+            </div>
+            <div class="col-md-6">
+                Thông Tin
+                <hr />
+
+                <table class="table">
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_Ten)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_Ten)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_Ma)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_Ma)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_Anh)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_Anh)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_FileUpload)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_FileUpload)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_MoTa)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_MoTa)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_ChiTiet)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_ChiTiet)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_TuKhoa)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_TuKhoa)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_GiaBan)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_GiaBan)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_TrangThai)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_TrangThai)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_SoLanXem)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_SoLanXem)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_KichCo)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_KichCo)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_NamXuatBan)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_NamXuatBan)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_GiaNhap)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_GiaNhap)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_SoLuong)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_SoLuong)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_ViTri)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_ViTri)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_NguyenBo)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_NguyenBo)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.S_SoTrang)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.S_SoTrang)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.DANHMUCSACH.DMS_TieuDe)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.DANHMUCSACH.DMS_TieuDe)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.NHAXUATBAN.NXB_Ten)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.NHAXUATBAN.NXB_Ten)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.TACGIA.TG_HoTen)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(model => model.TACGIA.TG_HoTen)
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="col-md-3">
+                Phân Loại
+                <hr />
+                <p style="text-align:center">
+                    <a href="">Thêm Phân Loại</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

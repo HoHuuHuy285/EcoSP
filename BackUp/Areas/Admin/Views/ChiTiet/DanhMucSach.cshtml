@@ -1,0 +1,110 @@
+﻿@model IEnumerable<EcooSP.Models.DANHMUCSACH>
+
+@{
+    ViewBag.Title = "DanhMucSach";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<h2>Nhà Xuất Bản</h2>
+
+<div class="col-md-12">
+    <form class="example" style="margin:0;max-width:300px">
+        <input type="text" placeholder="Search.." name="diachi" value="@ViewBag.diachi" ">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <a href="/Admin/ChiTiet/ThemMoiDMSach"> Thêm Mới</a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Id Danh Mục
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DMS_ParentId)
+        </th>
+        <th>
+            Tiêu Đề
+        </th>
+        <th>
+            Mô Tả
+        </th>
+        <th>
+            Vị Trí
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMS_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMS_ParentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMS_TieuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMS_MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMS_ViTri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMS_TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DonSach">
+    <Key>
+      <PropertyRef Name="ID_DonSach" />
+    </Key>
+    <Property Name="ID_DonSach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="SachDaDatHangs" Relationship="Self.FK_SachDaDatHang_DonSach" FromRole="DonSach" ToRole="SachDaDatHang" />
+  </EntityType>
+  <EntityType Name="PhanLoaiSach">
+    <Key>
+      <PropertyRef Name="ID_PhanLoai" />
+    </Key>
+    <Property Name="ID_PhanLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Sach" Type="Int32" />
+    <Property Name="ID_TheLoai" Type="Int32" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_PhanLoaiSach_Sach" FromRole="PhanLoaiSach" ToRole="Sach" />
+    <NavigationProperty Name="TheLoai" Relationship="Self.FK_PhanLoaiSach_TheLoai" FromRole="PhanLoaiSach" ToRole="TheLoai" />
+  </EntityType>
+  <EntityType Name="Sach">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSach" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="0" />
+    <Property Name="ConHang" Type="Boolean" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhanLoaiSaches" Relationship="Self.FK_PhanLoaiSach_Sach" FromRole="Sach" ToRole="PhanLoaiSach" />
+    <NavigationProperty Name="SachDaDatHangs" Relationship="Self.FK_SachDaDatHang_Sach" FromRole="Sach" ToRole="SachDaDatHang" />
+    <Property Name="HinhAnh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SachDaDatHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDonSach" Type="Int32" />
+    <Property Name="idSach" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <NavigationProperty Name="DonSach" Relationship="Self.FK_SachDaDatHang_DonSach" FromRole="SachDaDatHang" ToRole="DonSach" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_SachDaDatHang_Sach" FromRole="SachDaDatHang" ToRole="Sach" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="ID_TheLoai" />
+    </Key>
+    <Property Name="ID_TheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TheLoai1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhanLoaiSaches" Relationship="Self.FK_PhanLoaiSach_TheLoai" FromRole="TheLoai" ToRole="PhanLoaiSach" />
+  </EntityType>
+  <Association Name="FK_SachDaDatHang_DonSach">
+    <End Role="DonSach" Type="Self.DonSach" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SachDaDatHang" Type="Self.SachDaDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonSach">
+        <PropertyRef Name="ID_DonSach" />
+      </Principal>
+      <Dependent Role="SachDaDatHang">
+        <PropertyRef Name="idDonSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanLoaiSach_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhanLoaiSach" Type="Self.PhanLoaiSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhanLoaiSach">
+        <PropertyRef Name="ID_Sach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanLoaiSach_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhanLoaiSach" Type="Self.PhanLoaiSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="ID_TheLoai" />
+      </Principal>
+      <Dependent Role="PhanLoaiSach">
+        <PropertyRef Name="ID_TheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SachDaDatHang_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SachDaDatHang" Type="Self.SachDaDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SachDaDatHang">
+        <PropertyRef Name="idSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BookShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DonSaches" EntityType="Self.DonSach" />
+    <EntitySet Name="PhanLoaiSaches" EntityType="Self.PhanLoaiSach" />
+    <EntitySet Name="Saches" EntityType="Self.Sach" />
+    <EntitySet Name="SachDaDatHangs" EntityType="Self.SachDaDatHang" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+    <AssociationSet Name="FK_SachDaDatHang_DonSach" Association="Self.FK_SachDaDatHang_DonSach">
+      <End Role="DonSach" EntitySet="DonSaches" />
+      <End Role="SachDaDatHang" EntitySet="SachDaDatHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanLoaiSach_Sach" Association="Self.FK_PhanLoaiSach_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="PhanLoaiSach" EntitySet="PhanLoaiSaches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanLoaiSach_TheLoai" Association="Self.FK_PhanLoaiSach_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoais" />
+      <End Role="PhanLoaiSach" EntitySet="PhanLoaiSaches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SachDaDatHang_Sach" Association="Self.FK_SachDaDatHang_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="SachDaDatHang" EntitySet="SachDaDatHangs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BookShopModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BookShopModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="spDanhSachSanPham" ReturnType="Collection(BookShopModel.spDanhSachSanPham_Result)">
+      <Parameter Name="tenSach" Mode="In" Type="String" />
+      <Parameter Name="idTheLoai" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spDanhSachSanPham_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TenSach" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="GiaBan" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="NgayNhap" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="SoLuong" Nullable="true" />
+    <Property Type="String" Name="ConHang" Nullable="false" MaxLength="8" />
+  </ComplexType>
+</Schema>

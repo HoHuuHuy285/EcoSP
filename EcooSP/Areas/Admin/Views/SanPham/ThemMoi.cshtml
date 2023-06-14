@@ -1,0 +1,71 @@
+﻿@model EcooSP.Models.Sach
+
+@{
+    ViewBag.Title = "ThemMoi";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<div class="col-md-12 pt-4">
+    <h2>Thêm Mới Sách</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2"> Tên Sách</label>
+                <div class="col-md-10">
+                    <input name="TenSach" class="form-control" value="@Model.TenSach" />
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="form-group col-md-3">
+                    <label class="control-label col-md-2">Giá Bán</label>
+                    <div class="col-md-12">
+                        <input name="GiaBan" class="form-control" value="@Model.GiaBan" type="number" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label class="control-label col-md-2"> Ngày Nhập</label>
+                    <div class="col-md-12">
+                        <input name="NgayNhap" class="form-control" value="@string.Format("{0:yyyy-MM-dd}", Model.NgayNhap)" type="date" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label class="control-label col-md-2">Tình Trạng</label>
+                    <div class="col-md-12">
+                        <select class="form-control" name="ConHang">
+                            <option value="true" @Html.Raw(Model.ConHang == true?"selected":"")>Còn Hàng</option>
+                            <option value="false" @Html.Raw(Model.ConHang == false?"selected":"")>Hết Hàng</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="control-label col-md-2">Số Lượng</label>
+                    <div class="col-md-12">
+                        <input name="SoLuong" class="form-control" value="@Model.SoLuong" type="number" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Giới Thiệu</label>
+                <div class="col-md-10">
+                    <input name="ID" class="form-control" value="@Model.GioiThieu" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-success">Lưu</button>
+                    <a href="/Admin/SanPham/ChiTiet" class="btn btn-default">Huỷ</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

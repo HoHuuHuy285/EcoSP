@@ -1,0 +1,63 @@
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\EcooSP.dll.config
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\EcooSP.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\EcooSP.pdb
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\Microsoft.Web.Infrastructure.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Helpers.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Mvc.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Razor.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Webpages.Deployment.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Webpages.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Webpages.Razor.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Razor.xml
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Webpages.xml
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Webpages.Deployment.xml
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Webpages.Razor.xml
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Helpers.xml
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\bin\System.Web.Mvc.xml
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\obj\Debug\EcooSP.csprojResolveAssemblyReference.cache
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\obj\Debug\EcooSP.dll
+c:\users\huy\documents\visual studio 2015\Projects\EcooSP\EcooSP\obj\Debug\EcooSP.pdb
+E:\EcooSP\EcooSP\bin\EcooSP.dll.config
+E:\EcooSP\EcooSP\bin\EcooSP.dll
+E:\EcooSP\EcooSP\bin\EcooSP.pdb
+E:\EcooSP\EcooSP\bin\Microsoft.Web.Infrastructure.dll
+E:\EcooSP\EcooSP\bin\System.Web.Helpers.dll
+E:\EcooSP\EcooSP\bin\System.Web.Mvc.dll
+E:\EcooSP\EcooSP\bin\System.Web.Razor.dll
+E:\EcooSP\EcooSP\bin\System.Web.Webpages.Deployment.dll
+E:\EcooSP\EcooSP\bin\System.Web.Webpages.dll
+E:\EcooSP\EcooSP\bin\System.Web.Webpages.Razor.dll
+E:\EcooSP\EcooSP\bin\System.Web.Razor.xml
+E:\EcooSP\EcooSP\bin\System.Web.Webpages.xml
+E:\EcooSP\EcooSP\bin\System.Web.Webpages.Deployment.xml
+E:\EcooSP\EcooSP\bin\System.Web.Webpages.Razor.xml
+E:\EcooSP\EcooSP\bin\System.Web.Helpers.xml
+E:\EcooSP\EcooSP\bin\System.Web.Mvc.xml
+E:\EcooSP\EcooSP\obj\Debug\EcooSP.csprojResolveAssemblyReference.cache
+E:\EcooSP\EcooSP\obj\Debug\EcooSP.dll
+E:\EcooSP\EcooSP\obj\Debug\EcooSP.pdb
+D:\EcooSP\EcooSP\obj\Debug\EcooSP.dll
+D:\EcooSP\EcooSP\obj\Debug\EcooSP.pdb
+D:\EcooSP\EcooSP\obj\Debug\EcooSP.csproj.CoreCompileInputs.cache
+D:\EcooSP\EcooSP\obj\Debug\EcooSP.csproj.AssemblyReference.cache
+D:\EcooSP\EcooSP\bin\EcooSP.dll.config
+D:\EcooSP\EcooSP\bin\EcooSP.dll
+D:\EcooSP\EcooSP\bin\EcooSP.pdb
+D:\EcooSP\EcooSP\bin\Microsoft.Web.Infrastructure.dll
+D:\EcooSP\EcooSP\bin\System.Web.Helpers.dll
+D:\EcooSP\EcooSP\bin\System.Web.Mvc.dll
+D:\EcooSP\EcooSP\bin\System.Web.Razor.dll
+D:\EcooSP\EcooSP\bin\System.Web.Webpages.Deployment.dll
+D:\EcooSP\EcooSP\bin\System.Web.Webpages.dll
+D:\EcooSP\EcooSP\bin\System.Web.Webpages.Razor.dll
+D:\EcooSP\EcooSP\bin\System.Web.Razor.xml
+D:\EcooSP\EcooSP\bin\System.Web.Webpages.xml
+D:\EcooSP\EcooSP\bin\System.Web.Webpages.Deployment.xml
+D:\EcooSP\EcooSP\bin\System.Web.Webpages.Razor.xml
+D:\EcooSP\EcooSP\bin\System.Web.Helpers.xml
+D:\EcooSP\EcooSP\bin\System.Web.Mvc.xml
+D:\EcooSP\EcooSP\obj\Debug\EcooSP.csproj.CopyComplete
+D:\EcooSP\EcooSP\bin\EntityFramework.dll
+D:\EcooSP\EcooSP\bin\EntityFramework.SqlServer.dll
+D:\EcooSP\EcooSP\bin\EntityFramework.xml
+D:\EcooSP\EcooSP\bin\EntityFramework.SqlServer.xml

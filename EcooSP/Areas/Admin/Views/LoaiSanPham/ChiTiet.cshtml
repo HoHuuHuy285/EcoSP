@@ -1,0 +1,79 @@
+﻿@model IEnumerable<EcooSP.Models.TheLoai>
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+<style>
+    #namanyay-search-box {
+        background: #eee;
+        padding: 10px;
+        border-radius: 5px 0 0 5px;
+        -moz-border-radius: 5px 0 0 5px;
+        -webkit-border-radius: 5px 0 0 5px;
+        -o-border-radius: 5px 0 0 5px;
+        border: 0 none;
+        width: 160px;
+    }
+
+    #namanyay-search-btn {
+        background: #0099ff;
+        color: white;
+        font: 'trebuchet ms', trebuchet;
+        padding: 10px 20px;
+        border-radius: 0 5px 5px 0;
+        -moz-border-radius: 0 5px 5px 0;
+        -webkit-border-radius: 0 5px 5px 0;
+        -o-border-radius: 0 5px 5px 0;
+        border: 0 none;
+        font-weight: bold;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Thể Loại Sách </h2>
+    </div>
+    <div class="col-md-12">
+
+        <form id="searchthis" style="display:inline;" method="get">
+            <input id="namanyay-search-box" name="tentheloai" value="@ViewBag.tentheloai" size="40" type="text" placeholder="Search" />
+            <button id="namanyay-search-btn" type="submit">Go</button>
+        </form>
+        <br />
+        <a href="~/Admin/LoaiSanPham/ThemMoi">Thêm Mới</a>
+    </div>
+</div>
+<div class="col-md-12">
+
+<table class="table">
+    <tr>
+        <th>
+            Thể Loại
+        </th>
+        <th>
+            Mô Tả 
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.TheLoai1
+            </td>
+            <td>
+                @item.MoTa
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_TheLoai }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_TheLoai }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_TheLoai })
+            </td>
+        </tr>
+    }
+
+</table>
+ </div>

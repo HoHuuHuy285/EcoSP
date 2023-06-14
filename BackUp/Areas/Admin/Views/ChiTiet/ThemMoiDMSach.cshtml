@@ -1,0 +1,72 @@
+﻿@model EcooSP.Models.DANHMUCSACH
+
+@{
+    ViewBag.Title = "ThemMoiDMSach";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+<div class="col-md-12">
+<h2>Thêm mới Danh Mục Sách</h2>
+<form method="post">
+
+</form>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2">ID</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DMS_Id, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">ParentId</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DMS_ParentId, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Tiêu Đề</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DMS_TieuDe, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Mô Tả</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DMS_MoTa, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Vị Trí</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DMS_ViTri, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Trạng Thái</label>
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.DMS_TrangThai)
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-success">Lưu</button>
+            <a href="/Admin/ChiTiet/DanhMucSach" class="btn btn-default">Huỷ</a>
+        </div>
+    </div>
+</div>
+}
+
+</div>

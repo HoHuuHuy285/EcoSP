@@ -1,0 +1,111 @@
+﻿@model IEnumerable<EcooSP.Models.dsSachNew_Result>
+
+@{
+    ViewBag.Title = "Sach";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<h2>Sách</h2>
+<div class="col-md-12">
+
+
+    <form>
+        <select name="idLoai" class="form-control form-control-sm" style=" width: 200px; display:inline-block;">
+            <option> Tất cả loại </option>
+            @foreach (var item in new EcooSP.Models.mapDanhMucSach().DanhSachDanhMuc())
+            {
+                <option value="@item.DMS_Id" @Html.Raw(item.DMS_Id == (int?)ViewBag.idLoai? "selected" : "")>@item.DMS_TieuDe</option>
+            }
+        </select>
+        <input name="TimKiem" value="@ViewBag.TimKiem" />
+        <button> Tìm Kiếm</button>
+    </form>
+    <a href="~/>Admin/ChiTiet/ThemMoi"> Thêm Mới</a>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th style="width:50px"> ID </th>
+        <th>
+            Tên Sách
+        </th>
+        <th>
+            Giá Bán
+        </th>
+        <th>
+            Lượt Xem
+        </th>
+        <th>
+            Năm Xuất Bản
+        </th>
+        <th>
+            Danh Mục
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @item.S_ID
+    </td>
+    <td>
+        <a href="~/Admin/ChiTiet/ChiTietSach?id=@item.S_ID">@item.S_Ten</a>
+    </td>
+    <td>
+        @string.Format("{0:#,0}", item.S_GiaBan)
+    </td>
+    <td>
+        @item.S_SoLanXem
+    </td>
+    <td>
+        @item.S_NamXuatBan
+    </td>
+    <td>
+        @item.DMS_TieuDe
+    </td>
+</tr>
+    }
+
+</table>

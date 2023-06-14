@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D45822AF-1FBC-4F80-A9D6-8ED5508D27F4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcooSP</RootNamespace>
+    <AssemblyName>EcooSP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Content\css\atlantis.css" />
+    <Content Include="Areas\Admin\Content\css\atlantis.min.css" />
+    <Content Include="Areas\Admin\Content\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\css\demo.css" />
+    <Content Include="Areas\Admin\Content\css\fonts.css" />
+    <Content Include="Areas\Admin\Content\css\fonts.min.css" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\flaticon.css" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\flaticon.html" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\Flaticon.svg" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-brands-400.svg" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-regular-400.svg" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-solid-900.svg" />
+    <Content Include="Areas\Admin\Content\fonts\simple-line-icons\Simple-Line-Icons.svg" />
+    <Content Include="Areas\Admin\Content\img\arashmil.jpg" />
+    <Content Include="Areas\Admin\Content\img\bg-404.jpeg" />
+    <Content Include="Areas\Admin\Content\img\bg-abstract.png" />
+    <Content Include="Areas\Admin\Content\img\bg-abstract2.png" />
+    <Content Include="Areas\Admin\Content\img\blogpost.jpg" />
+    <Content Include="Areas\Admin\Content\img\chadengle.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example1-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example1.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example10-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example10.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example11-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example11.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example12-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example12.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example2-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example2.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example3-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example3.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example4-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example4.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example5-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example5.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example6-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example6.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example7-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example7.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example8-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example8.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\example9-300x300.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\example9.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\logoinvoice.svg" />
+    <Content Include="Areas\Admin\Content\img\examples\product1.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product10.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\product11.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\product12.jpeg" />
+    <Content Include="Areas\Admin\Content\img\examples\product2.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product3.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product4.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product5.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product6.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product7.jpg" />
+    <Content Include="Areas\Admin\Content\img\examples\product8.jpg" />
+    <Content Include="Areas\Admin\Content\img\flags\ad.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ae.png" />
+    <Content Include="Areas\Admin\Content\img\flags\af.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ag.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ai.png" />
+    <Content Include="Areas\Admin\Content\img\flags\al.png" />
+    <Content Include="Areas\Admin\Content\img\flags\am.png" />
+    <Content Include="Areas\Admin\Content\img\flags\an.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ao.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ar.png" />
+    <Content Include="Areas\Admin\Content\img\flags\as.png" />
+    <Content Include="Areas\Admin\Content\img\flags\at.png" />
+    <Content Include="Areas\Admin\Content\img\flags\au.png" />
+    <Content Include="Areas\Admin\Content\img\flags\aw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ax.png" />
+    <Content Include="Areas\Admin\Content\img\flags\az.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ba.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bb.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bd.png" />
+    <Content Include="Areas\Admin\Content\img\flags\be.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bh.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bi.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bj.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bo.png" />
+    <Content Include="Areas\Admin\Content\img\flags\br.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bs.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bv.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\by.png" />
+    <Content Include="Areas\Admin\Content\img\flags\bz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ca.png" />
+    <Content Include="Areas\Admin\Content\img\flags\catalonia.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cd.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ch.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ci.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ck.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cl.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\co.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cs.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cv.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cx.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cy.png" />
+    <Content Include="Areas\Admin\Content\img\flags\cz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\de.png" />
+    <Content Include="Areas\Admin\Content\img\flags\dj.png" />
+    <Content Include="Areas\Admin\Content\img\flags\dk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\dm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\do.png" />
+    <Content Include="Areas\Admin\Content\img\flags\dz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ec.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ee.png" />
+    <Content Include="Areas\Admin\Content\img\flags\eg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\eh.png" />
+    <Content Include="Areas\Admin\Content\img\flags\england.png" />
+    <Content Include="Areas\Admin\Content\img\flags\er.png" />
+    <Content Include="Areas\Admin\Content\img\flags\es.png" />
+    <Content Include="Areas\Admin\Content\img\flags\et.png" />
+    <Content Include="Areas\Admin\Content\img\flags\europeanunion.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fam.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fi.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fj.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fo.png" />
+    <Content Include="Areas\Admin\Content\img\flags\fr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ga.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gb.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gd.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ge.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gh.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gi.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gl.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gp.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gq.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gs.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\gy.png" />
+    <Content Include="Areas\Admin\Content\img\flags\hk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\hm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\hn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\hr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ht.png" />
+    <Content Include="Areas\Admin\Content\img\flags\hu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\id.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ie.png" />
+    <Content Include="Areas\Admin\Content\img\flags\il.png" />
+    <Content Include="Areas\Admin\Content\img\flags\in.png" />
+    <Content Include="Areas\Admin\Content\img\flags\io.png" />
+    <Content Include="Areas\Admin\Content\img\flags\iq.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ir.png" />
+    <Content Include="Areas\Admin\Content\img\flags\is.png" />
+    <Content Include="Areas\Admin\Content\img\flags\it.png" />
+    <Content Include="Areas\Admin\Content\img\flags\jm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\jo.png" />
+    <Content Include="Areas\Admin\Content\img\flags\jp.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ke.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kh.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ki.png" />
+    <Content Include="Areas\Admin\Content\img\flags\km.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kp.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ky.png" />
+    <Content Include="Areas\Admin\Content\img\flags\kz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\la.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lb.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\li.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ls.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\lv.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ly.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ma.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\md.png" />
+    <Content Include="Areas\Admin\Content\img\flags\me.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mh.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ml.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mo.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mp.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mq.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ms.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mv.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mx.png" />
+    <Content Include="Areas\Admin\Content\img\flags\my.png" />
+    <Content Include="Areas\Admin\Content\img\flags\mz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\na.png" />
+    <Content Include="Areas\Admin\Content\img\flags\nc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ne.png" />
+    <Content Include="Areas\Admin\Content\img\flags\nf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ng.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ni.png" />
+    <Content Include="Areas\Admin\Content\img\flags\nl.png" />
+    <Content Include="Areas\Admin\Content\img\flags\no.png" />
+    <Content Include="Areas\Admin\Content\img\flags\np.png" />
+    <Content Include="Areas\Admin\Content\img\flags\nr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\nu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\nz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\om.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pa.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pe.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ph.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pl.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ps.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\pw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\py.png" />
+    <Content Include="Areas\Admin\Content\img\flags\qa.png" />
+    <Content Include="Areas\Admin\Content\img\flags\re.png" />
+    <Content Include="Areas\Admin\Content\img\flags\readme.txt" />
+    <Content Include="Areas\Admin\Content\img\flags\ro.png" />
+    <Content Include="Areas\Admin\Content\img\flags\rs.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ru.png" />
+    <Content Include="Areas\Admin\Content\img\flags\rw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sa.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sb.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\scotland.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sd.png" />
+    <Content Include="Areas\Admin\Content\img\flags\se.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sh.png" />
+    <Content Include="Areas\Admin\Content\img\flags\si.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sj.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sl.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\so.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\st.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sv.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sy.png" />
+    <Content Include="Areas\Admin\Content\img\flags\sz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\td.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\th.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tj.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tk.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tl.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\to.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tr.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tv.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tw.png" />
+    <Content Include="Areas\Admin\Content\img\flags\tz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ua.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ug.png" />
+    <Content Include="Areas\Admin\Content\img\flags\um.png" />
+    <Content Include="Areas\Admin\Content\img\flags\us.png" />
+    <Content Include="Areas\Admin\Content\img\flags\uy.png" />
+    <Content Include="Areas\Admin\Content\img\flags\uz.png" />
+    <Content Include="Areas\Admin\Content\img\flags\va.png" />
+    <Content Include="Areas\Admin\Content\img\flags\vc.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ve.png" />
+    <Content Include="Areas\Admin\Content\img\flags\vg.png" />
+    <Content Include="Areas\Admin\Content\img\flags\vi.png" />
+    <Content Include="Areas\Admin\Content\img\flags\vn.png" />
+    <Content Include="Areas\Admin\Content\img\flags\vu.png" />
+    <Content Include="Areas\Admin\Content\img\flags\wales.png" />
+    <Content Include="Areas\Admin\Content\img\flags\wf.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ws.png" />
+    <Content Include="Areas\Admin\Content\img\flags\ye.png" />
+    <Content Include="Areas\Admin\Content\img\flags\yt.png" />
+    <Content Include="Areas\Admin\Content\img\flags\za.png" />
+    <Content Include="Areas\Admin\Content\img\flags\zm.png" />
+    <Content Include="Areas\Admin\Content\img\flags\zw.png" />
+    <Content Include="Areas\Admin\Content\img\icon.ico" />
+    <Content Include="Areas\Admin\Content\img\icon.png" />
+    <Content Include="Areas\Admin\Content\img\icon.svg" />
+    <Content Include="Areas\Admin\Content\img\img-shadow.png" />
+    <Content Include="Areas\Admin\Content\img\jm_denis.jpg" />
+    <Content Include="Areas\Admin\Content\img\logo.svg" />
+    <Content Include="Areas\Admin\Content\img\logo2.svg" />
+    <Content Include="Areas\Admin\Content\img\logoalternatif.svg" />
+    <Content Include="Areas\Admin\Content\img\logoproduct.svg" />
+    <Content Include="Areas\Admin\Content\img\logoproduct2.svg" />
+    <Content Include="Areas\Admin\Content\img\logoproduct3.svg" />
+    <Content Include="Areas\Admin\Content\img\mlane.jpg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product1.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product2.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product3.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product4.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product5.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product6.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product7.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product8.jpeg" />
+    <Content Include="Areas\Admin\Content\img\productimg\product9.jpeg" />
+    <Content Include="Areas\Admin\Content\img\profile.jpg" />
+    <Content Include="Areas\Admin\Content\img\profile2.jpg" />
+    <Content Include="Areas\Admin\Content\img\sauro.jpg" />
+    <Content Include="Areas\Admin\Content\img\talha.jpg" />
+    <Content Include="Areas\Admin\Content\img\visa.svg" />
+    <Content Include="Areas\Admin\Content\js\atlantis.js" />
+    <Content Include="Areas\Admin\Content\js\atlantis.min.js" />
+    <Content Include="Areas\Admin\Content\js\atlantis2.js" />
+    <Content Include="Areas\Admin\Content\js\core\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\core\jquery.3.2.1.min.js" />
+    <Content Include="Areas\Admin\Content\js\core\popper.min.js" />
+    <Content Include="Areas\Admin\Content\js\demo.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\chart-circle\circles.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\chart.js\chart.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\datatables\datatables.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jquery-scrollbar\jquery.scrollbar.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jquery-ui-touch-punch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jquery.sparkline\jquery.sparkline.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\jquery.vmap.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\continents\jquery.vmap.africa.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\continents\jquery.vmap.europe.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\continents\jquery.vmap.north-america.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\continents\jquery.vmap.south-america.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.algeria.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.argentina.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.brazil.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.canada.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.croatia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.france.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.greece.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.indonesia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.iran.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.iraq.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.new_regions_france.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.serbia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.tunisia.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.turkey.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.ukraine.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.usa.counties.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.usa.districts.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\sweetalert\sweetalert.min.js" />
+    <Content Include="Areas\Admin\Content\js\plugin\webfont\webfont.min.js" />
+    <Content Include="Areas\Admin\Content\js\setting-demo.js" />
+    <Content Include="Areas\Admin\Content\js\setting-demo2.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonHangController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaiSanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhanLoaiSanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonSach.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mapDonHang.cs" />
+    <Compile Include="Models\mapLoaiSanPham.cs" />
+    <Compile Include="Models\mapPhanLoaiSanPham.cs" />
+    <Compile Include="Models\mapSach.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanLoaiSach.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sach.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SachDaDatHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spDanhSachSanPham_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TheLoai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Account.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Home\Mycart.cshtml" />
+    <Content Include="Views\Home\Whishlist.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\layout.cshtml" />
+    <Content Include="Views\SanPham\ChiTiet.cshtml" />
+    <Content Include="Views\SanPham\TheLoai.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Content\css\atlantis.css.map" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\Flaticon.eot" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\Flaticon.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\Flaticon.woff" />
+    <Content Include="Areas\Admin\Content\fonts\flaticon\_flaticon.scss" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-brands-400.eot" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-brands-400.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-brands-400.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-brands-400.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-regular-400.eot" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-regular-400.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-regular-400.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-regular-400.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-solid-900.eot" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-solid-900.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-solid-900.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome\fa-solid-900.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\simple-line-icons\Simple-Line-Icons.eot" />
+    <Content Include="Areas\Admin\Content\fonts\simple-line-icons\Simple-Line-Icons.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\simple-line-icons\Simple-Line-Icons.woff" />
+    <Content Include="Areas\Admin\Content\fonts\simple-line-icons\Simple-Line-Icons.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\summernote\summernote.eot" />
+    <Content Include="Areas\Admin\Content\fonts\summernote\summernote.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\summernote\summernote.woff" />
+    <Content Include="Areas\Admin\Content\img\img-shadow.gvdesign" />
+    <Content Include="Areas\Admin\Views\Shared\layout-admin.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Areas\Admin\Views\TrangChu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\ChiTiet.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPham\ChiTiet.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\ChiTiet.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanLoaiSanPham\ChiTiet.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPham\ThemMoi.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\CapNhat.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\SanPham\ThemMoi.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\ThemPhanLoai.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\CapNhatPhanLoai.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\CapNhatHinhAnh.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="content\css\" />
+    <Folder Include="content\fonts\" />
+    <Folder Include="content\img\" />
+    <Folder Include="content\js\" />
+    <Folder Include="Data\Image\" />
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63622</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63622/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

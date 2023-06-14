@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DonSach">
+    <Key>
+      <PropertyRef Name="ID_DonSach" />
+    </Key>
+    <Property Name="ID_DonSach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDienThoai" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PhanLoaiSach">
+    <Key>
+      <PropertyRef Name="ID_PhanLoai" />
+    </Key>
+    <Property Name="ID_PhanLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Sach" Type="int" />
+    <Property Name="ID_TheLoai" Type="int" />
+  </EntityType>
+  <EntityType Name="Sach">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSach" Type="nvarchar" MaxLength="100" />
+    <Property Name="GiaBan" Type="money" />
+    <Property Name="NgayNhap" Type="smalldatetime" />
+    <Property Name="ConHang" Type="bit" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="GioiThieu" Type="ntext" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SachDaDatHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDonSach" Type="int" />
+    <Property Name="idSach" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="ID_TheLoai" />
+    </Key>
+    <Property Name="ID_TheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TheLoai" Type="nchar" MaxLength="10" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_PhanLoaiSach_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhanLoaiSach" Type="Self.PhanLoaiSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhanLoaiSach">
+        <PropertyRef Name="ID_Sach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanLoaiSach_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhanLoaiSach" Type="Self.PhanLoaiSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="ID_TheLoai" />
+      </Principal>
+      <Dependent Role="PhanLoaiSach">
+        <PropertyRef Name="ID_TheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SachDaDatHang_DonSach">
+    <End Role="DonSach" Type="Self.DonSach" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SachDaDatHang" Type="Self.SachDaDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonSach">
+        <PropertyRef Name="ID_DonSach" />
+      </Principal>
+      <Dependent Role="SachDaDatHang">
+        <PropertyRef Name="idDonSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SachDaDatHang_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SachDaDatHang" Type="Self.SachDaDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SachDaDatHang">
+        <PropertyRef Name="idSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spDanhSachSanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tenSach" Type="nvarchar" Mode="In" />
+    <Parameter Name="idTheLoai" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="BookShopModelStoreContainer">
+    <EntitySet Name="DonSach" EntityType="Self.DonSach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanLoaiSach" EntityType="Self.PhanLoaiSach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sach" EntityType="Self.Sach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SachDaDatHang" EntityType="Self.SachDaDatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PhanLoaiSach_Sach" Association="Self.FK_PhanLoaiSach_Sach">
+      <End Role="Sach" EntitySet="Sach" />
+      <End Role="PhanLoaiSach" EntitySet="PhanLoaiSach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanLoaiSach_TheLoai" Association="Self.FK_PhanLoaiSach_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoai" />
+      <End Role="PhanLoaiSach" EntitySet="PhanLoaiSach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SachDaDatHang_DonSach" Association="Self.FK_SachDaDatHang_DonSach">
+      <End Role="DonSach" EntitySet="DonSach" />
+      <End Role="SachDaDatHang" EntitySet="SachDaDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SachDaDatHang_Sach" Association="Self.FK_SachDaDatHang_Sach">
+      <End Role="Sach" EntitySet="Sach" />
+      <End Role="SachDaDatHang" EntitySet="SachDaDatHang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,49 @@
+﻿@model EcooSP.Models.TACGIA
+
+@{
+    ViewBag.Title = "ThemMoiTacGia";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<h2>Thêm Mới Tác Giả</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2"> ID Sách</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TG_Id, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Họ Tên Tác Giả</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TG_HoTen, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Mô Tả</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TG_MoTa, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-success">Lưu</button>
+                <a href="/Admin/ChiTiet/DanhMucSach" class="btn btn-default">Huỷ</a>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

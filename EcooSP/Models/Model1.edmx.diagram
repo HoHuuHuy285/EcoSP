@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1751a9ae91048d792efdbcc39d85765" Name="Diagram1">
+        <EntityTypeShape EntityType="BookShopModel.DonSach" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookShopModel.PhanLoaiSach" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookShopModel.Sach" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookShopModel.SachDaDatHang" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookShopModel.sysdiagram" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookShopModel.TheLoai" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="BookShopModel.FK_SachDaDatHang_DonSach" ManuallyRouted="false" />
+        <AssociationConnector Association="BookShopModel.FK_PhanLoaiSach_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="BookShopModel.FK_PhanLoaiSach_TheLoai" ManuallyRouted="false" />
+        <AssociationConnector Association="BookShopModel.FK_SachDaDatHang_Sach" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

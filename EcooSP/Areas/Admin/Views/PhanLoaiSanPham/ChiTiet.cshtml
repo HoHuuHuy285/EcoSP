@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EcooSP.Models.PhanLoaiSach>
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<h2>Chi Tiết Sách</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Tên Sách
+        </th>
+        <th>
+            Thể Loại
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @item.Sach.TenSach
+    </td>
+
+    <td>
+        @item.TheLoai.TheLoai1
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID_PhanLoai }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID_PhanLoai }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID_PhanLoai })
+    </td>
+</tr>
+}
+
+</table>

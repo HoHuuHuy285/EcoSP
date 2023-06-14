@@ -1,0 +1,39 @@
+﻿@model EcooSP.Models.PhanLoaiSach
+
+@{
+    ViewBag.Title = "ThemPhanLoai";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<div class="col-md-12">
+    <h2>Thêm Phân Loại</h2>
+    <hr />
+    <form method="post">
+    </form>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m=>m.ID_Sach)
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2"> ID Thể Loại</label>
+        <div class="col-md-10">
+            <select name="ID_TheLoai" class="form-control">
+                @foreach (var item in new EcooSP.Models.mapLoaiSanPham().DanhSach())
+                {
+                    <option value="@item.ID_TheLoai" @Html.Raw(item.ID_TheLoai == Model.ID_TheLoai ? "selected" : "")>@item.TheLoai1 </option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-success">Lưu</button>
+            <a href="/Admin/SanPham/ChiTiet" class="btn btn-default">Huỷ</a>
+        </div>
+    </div>
+</div>
+}
+    </div>

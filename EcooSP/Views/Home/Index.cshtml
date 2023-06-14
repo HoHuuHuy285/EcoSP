@@ -1,0 +1,258 @@
+﻿
+@{
+    Layout = "~/Views/Shared/layout.cshtml";
+    var loaiSanPhams = new EcooSP.Models.mapLoaiSanPham().DanhSach();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <!-- Start slider -->
+    <section id="aa-slider">
+        <div class="aa-slider-area">
+            <div id="sequence" class="seq">
+                <div class="seq-screen">
+                    <ul class="seq-canvas">
+                        <!-- single slide item -->
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="~/content/img/slider/10.jpg" alt="Men slide img" />
+                            </div>
+                            <div class="seq-title">
+                                <span data-seq>Save Up to 75% Off</span>
+                                <h2 data-seq>Sách Bán Chạy</h2>
+                                <p data-seq>Nếu có khả năng hãy mua sách để ủng hộ Tác giả và Nhà xuất bản.</p>
+                                <a data-seq href="/SanPham/ChiTiet" class="aa-shop-now-btn aa-secondary-btn">Mua Ngay</a>
+                            </div>
+                        </li>
+                        <!-- single slide item -->
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="~/content/img/slider/12.jpg" alt="Wristwatch slide img" />
+                            </div>
+                            <div class="seq-title">
+                                <span data-seq>Save Up to 40% Off</span>
+                                <h2 data-seq>Sách Mới Nhập</h2>
+                                <p data-seq> Hãy để sách trải đường trên hành trình đưa bạn đi đến sự khôn ngoan và hiểu biết hơn.</p>
+                                <a data-seq href="/SanPham/ChiTiet" class="aa-shop-now-btn aa-secondary-btn">Mua Ngay </a>
+                            </div>
+                        </li>
+                        <!-- single slide item -->
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="~/content/img/slider/8.jpg" alt="Women Jeans slide img" />
+                            </div>
+                            <div class="seq-title">
+                                <span data-seq>Save Up to 75% Off</span>
+                                <h2 data-seq>Sách Pháp Luật</h2>
+                                <p data-seq>Nếu có khả năng hãy mua sách để ủng hộ Tác giả và Nhà xuất bản.</p>
+                                <a data-seq href="/SanPham/ChiTiet" class="aa-shop-now-btn aa-secondary-btn">Mua Ngay</a>
+                            </div>
+                        </li>
+                        <!-- single slide item -->
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="~/content/img/slider/9.png" alt="Shoes slide img" />
+                            </div>
+                            <div class="seq-title">
+                                <span data-seq>Save Up to 75% Off</span>
+                                <h2 data-seq>Sách Do Biên Tập Viên Đề Cử</h2>
+                                <p data-seq>Hãy để sách trải đường trên hành trình đưa bạn đi đến sự khôn ngoan và hiểu biết hơn.</p>
+                                <a data-seq href="/SanPham/ChiTiet" class="aa-shop-now-btn aa-secondary-btn">Mua Ngay</a>
+                            </div>
+                        </li>
+                        <!-- single slide item -->
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="~/content/img/slider/11.jpg" alt="Male Female slide img" />
+                            </div>
+                            <div class="seq-title">
+                                <span data-seq>Save Up to 50% Off</span>
+                                <h2 data-seq>Sách cho Sinh Viên</h2>
+                                <p data-seq>Nếu có khả năng hãy mua sách để ủng hộ Tác giả và Nhà xuất bản.</p>
+                                <a data-seq href="/SanPham/ChiTiet" class="aa-shop-now-btn aa-secondary-btn">Mua Ngay</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- slider navigation btn -->
+                <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                    <a type="button" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                    <a type="button" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+    <!-- / slider -->
+    <!-- Products section -->
+    <section id="aa-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="aa-product-area">
+                            <div class="aa-product-inner">
+                                <!-- start prduct navigation -->
+                                <ul class="nav nav-tabs aa-products-tab">
+                                    @{ 
+                                        string active = "active"; 
+                                    }
+                                    @foreach (var item in loaiSanPhams)
+                                    {
+                                        <li class="@active"><a href="#type_@item.ID_TheLoai" data-toggle="tab">@item.TheLoai1</a></li>
+                                        active = "";
+                                    } 
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    @{
+                                        active = "active";
+                                    }
+                                    @foreach (var item in loaiSanPhams)
+                                    {
+
+                                        var sanPhamTheoLoais = new EcooSP.Models.mapSach().spTimKiem("", item.ID_TheLoai);
+
+
+                                        <div class="tab-pane fade in @active" id="type_@item.ID_TheLoai">
+                                            <ul class="aa-product-catg">
+                                                @foreach (var sanPham in sanPhamTheoLoais)
+                                                {
+                                                    <li>
+                                                        <figure>
+                                                            <a class="aa-product-img" href="/SanPham/ChiTiet"><img src="~/content/img/man/2.jpg" alt="polo shirt img"></a>
+                                                            <a class="aa-add-card-btn" href="/SanPham/ChiTiet"><span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ</a>
+                                                            <figcaption>
+                                                                <h4 class="aa-product-title"><a href="/SanPham/ChiTiet">Tâm Lý Học Về Tiền</a></h4>
+                                                                <span class="aa-product-price">189.000 đ</span><span class="aa-product-price"><del>250.000 đ</del></span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="aa-product-hvr-content">
+                                                            <a href="/SanPham/ChiTiet" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                            <a href="/SanPham/ChiTiet" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                                            <a href="/SanPham/ChiTiet" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                                                        </div>
+                                                        <!-- product badge -->
+                                                        <span class="aa-badge aa-sale" href="/SanPham/ChiTiet">SALE!</span>
+                                                    </li>
+                                                    <li>
+                                                        <figure>
+                                                            <a class="aa-product-img" href="/SanPham/ChiTiet"><img src="~/content/img/man/2.jpg" alt="polo shirt img"></a>
+                                                            <a class="aa-add-card-btn" href="/SanPham/ChiTiet"><span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ</a>
+                                                            <figcaption>
+                                                                <h4 class="aa-product-title"><a href="/SanPham/ChiTiet">Tâm Lý Học Về Tiền</a></h4>
+                                                                <span class="aa-product-price">189.000 đ</span><span class="aa-product-price"><del>250.000 đ</del></span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="aa-product-hvr-content">
+                                                            <a href="/SanPham/ChiTiet" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                            <a href="/SanPham/ChiTiet" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                                            <a href="/SanPham/ChiTiet" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                                                        </div>
+                                                        <!-- product badge -->
+                                                        <span class="aa-badge aa-sale" href="/SanPham/ChiTiet">SALE!</span>
+                                                    </li>
+                                                }
+
+                                            </ul>
+                                            <a class="aa-browse-btn" href="/SanPham/ChiTiet">Xem Tất Cả Sản Phẩm <span class="fa fa-long-arrow-right"></span></a>
+                                        </div>
+                                        active = "";
+                                    }
+                                </div>
+                                <!-- quick view modal -->
+                                <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <div class="row">
+                                                    <!-- Modal view slider -->
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="aa-product-view-slider">
+                                                            <div class="simpleLens-gallery-container" id="demo-1">
+                                                                <div class="simpleLens-container">
+                                                                    <div class="simpleLens-big-image-container">
+                                                                        <a class="simpleLens-lens-image" data-lens-image="img/view-slider/large/polo-shirt-1.png">
+                                                                            <img src="~/content/img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="simpleLens-thumbnails-container">
+                                                                    <a href="/SanPham/ChiTiet" class="simpleLens-thumbnail-wrapper"
+                                                                       data-lens-image="img/view-slider/large/polo-shirt-1.png"
+                                                                       data-big-image="img/view-slider/medium/polo-shirt-1.png">
+                                                                        <img src="~/content/img/view-slider/thumbnail/polo-shirt-1.png">
+                                                                    </a>
+                                                                    <a href="/SanPham/ChiTiet" class="simpleLens-thumbnail-wrapper"
+                                                                       data-lens-image="img/view-slider/large/polo-shirt-3.png"
+                                                                       data-big-image="img/view-slider/medium/polo-shirt-3.png">
+                                                                        <img src="~/content/img/view-slider/thumbnail/polo-shirt-3.png">
+                                                                    </a>
+
+                                                                    <a href="/SanPham/ChiTiet" class="simpleLens-thumbnail-wrapper"
+                                                                       data-lens-image="img/view-slider/large/polo-shirt-4.png"
+                                                                       data-big-image="img/view-slider/medium/polo-shirt-4.png">
+                                                                        <img src="~/content/img/view-slider/thumbnail/polo-shirt-4.png">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal view content -->
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="aa-product-view-content">
+                                                            <h3>T-Shirt</h3>
+                                                            <div class="aa-price-block">
+                                                                <span class="aa-product-view-price">$34.99</span>
+                                                                <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
+                                                            </div>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis animi, veritatis quae repudiandae quod nulla porro quidem, itaque quis quaerat!</p>
+                                                            <h4>Size</h4>
+                                                            <div class="aa-prod-view-size">
+                                                                <a href="/SanPham/ChiTiet">S</a>
+                                                                <a href="/SanPham/ChiTiet">M</a>
+                                                                <a href="/SanPham/ChiTiet">L</a>
+                                                                <a href="/SanPham/ChiTiet">XL</a>
+                                                            </div>
+                                                            <div class="aa-prod-quantity">
+                                                                <form action="">
+                                                                    <select name="" id="">
+                                                                        <option value="0" selected="1">1</option>
+                                                                        <option value="1">2</option>
+                                                                        <option value="2">3</option>
+                                                                        <option value="3">4</option>
+                                                                        <option value="4">5</option>
+                                                                        <option value="5">6</option>
+                                                                    </select>
+                                                                </form>
+                                                                <p class="aa-prod-category">
+                                                                    Category: <a href="/SanPham/ChiTiet">Polo T-Shirt</a>
+                                                                </p>
+                                                            </div>
+                                                            <div class="aa-prod-view-bottom">
+                                                                <a href="/SanPham/ChiTiet" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ</a>
+                                                                <a href="/SanPham/ChiTiet" class="aa-add-to-cart-btn">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- / quick view modal -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Products section -->
+
+</body>
+</html>

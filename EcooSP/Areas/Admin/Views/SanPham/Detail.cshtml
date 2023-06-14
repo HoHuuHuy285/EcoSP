@@ -1,0 +1,113 @@
+﻿@model EcooSP.Models.Sach
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Chi Tiết Sách </h2>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-2">
+                <h4>Ảnh</h4>
+                <img src="@Model.HinhAnh" style="width:200px" />
+                <p>
+                    <a href="~/Admin/SanPham/CapNhatHinhAnh?idSanPham=@Model.ID" class="btn btn-xs btn-danger">Upload</a>
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                Thông Tin Chi Tiết
+                <a href="~/Admin/SanPham/CapNhat?id=@Model.ID" class="pull-right"> Cập Nhật </a>
+                <hr />
+                <div>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>
+                                Tên Sách
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(model => model.TenSach)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Giá Bán
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(model => model.GiaBan)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Ngày Nhập
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(model => model.NgayNhap)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Tình trạng 
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(model => model.ConHang)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Số Lượng
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(model => model.SoLuong)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Giới Thiệu
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(model => model.GioiThieu)
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-3">
+                Thể Loại
+                    <a href="~/Admin/SanPham/ThemPhanLoai?idSach=@Model.ID" class="pull-right">Thêm Thể Loại </a>
+                <hr />
+                <table class="table">
+                    @foreach (var item in new EcooSP.Models.mapLoaiSanPham().DanhSachTheoSanPham(Model.ID))
+                    {
+
+                        <tr>
+                            <td>@item.TheLoai.TheLoai1</td>
+                            <td>
+                                <a href="~/Admin/SanPham/CapNhatPhanLoai?id=@item.ID_PhanLoai">Sửa</a> |
+                                <a>Xoá</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

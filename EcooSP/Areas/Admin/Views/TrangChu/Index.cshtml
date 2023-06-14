@@ -1,0 +1,13 @@
+﻿@model List<EcooSP.Models.DONHANG>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/layout-admin.cshtml";
+}
+
+<h2>Danh Sách Đơn Hàng</h2>
+
+
+@foreach ( var item in Model)
+            {
+                <p>@item.TenKhachHang @item.SoDienThoai</p>
+            }
